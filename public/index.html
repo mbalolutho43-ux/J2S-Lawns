@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J2S Lawns</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+
+    <h1>J2S Lawns</h1>
+
+<img src="images/logo.png" alt="J2S Lawns Logo" class="logo">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h2>Professional Lawn Care Services</h2>
+
+    <p>
+        We provide lawn mowing, landscaping,
+        garden maintenance and property care.
+    </p>
+
+    <button>Get Free Quote</button>
+</section>
+<section class="service-area">
+
+    <h2>Check If We Service Your Area</h2>
+
+    <input
+        type="text"
+        id="locationInput"
+        placeholder="Enter your suburb or city">
+
+    <button onclick="checkLocation()">
+        Check Area
+    </button>
+
+    <p id="locationResult"></p>
+
+</section>
+<section class="map-section">
+
+    <h2>Find Us</h2>
+
+    <iframe
+        src="https://www.google.com/maps?q=East+London+South+Africa&output=embed"
+        width="100%"
+        height="400"
+        style="border:0;"
+        loading="lazy">
+    </iframe>
+
+</section>
+
+<section class="services-preview">
+    <h2>Our Services</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Lawn Mowing</h3>
+            <p>Professional lawn cutting services.</p>
+        </div>
+
+        <div class="card">
+            <h3>Landscaping</h3>
+            <p>Beautiful outdoor transformations.</p>
+        </div>
+
+        <div class="card">
+            <h3>Garden Maintenance</h3>
+            <p>Keep your garden healthy and clean.</p>
+        </div>
+
+    </div>
+</section>
+<section class="gallery">
+    <h2>Our Recent Work</h2>
+
+    <div class="gallery-container">
+        <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=600" alt="Lawn">
+        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600" alt="Garden">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600" alt="Landscaping">
+    </div>
+</section>
+<footer>
+    <p>&copy; 2026 J2S Lawns. All Rights Reserved.</p>
+    <p>Email: info@j2slawns.co.za</p>
+    <p>Phone: +27 XX XXX XXXX</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
