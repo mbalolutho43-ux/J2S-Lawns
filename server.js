@@ -21,7 +21,7 @@ app.post("/contact", (req, res) => {
     enquiries.push(enquiry);
 
    console.log("Saving enquiry...");
-   
+
     fs.writeFileSync(
         "enquiries.json",
         JSON.stringify(enquiries, null, 2)
@@ -34,6 +34,8 @@ app.post("/contact", (req, res) => {
 
 });
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
