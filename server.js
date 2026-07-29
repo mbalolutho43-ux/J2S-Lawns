@@ -21,6 +21,7 @@ app.post("/contact", (req, res) => {
     enquiries.push(enquiry);
 
    console.log("Saving enquiry...");
+    console.log("EMAIL FEATURE ACTIVE");
 
     fs.writeFileSync(
         "enquiries.json",
