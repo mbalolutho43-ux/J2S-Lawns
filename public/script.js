@@ -1,38 +1,39 @@
+alert("SCRIPT LOADED");
+console.log("SCRIPT LOADED");
 const form = document.getElementById("contactForm");
 
 if (form) {
 
     form.addEventListener("submit", async (e) => {
 
-        e.preventDefault();
+    e.preventDefault();
 
-        const data = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("phone").value,
-            message: document.getElementById("message").value
-        };
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        message: document.getElementById("message").value
+    };
 
-        const response = await fetch("/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-
-        alert(result.message);
-
-        form.reset();
-
+    const response = await fetch("/contact", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
     });
+
+    const result = await response.json();
+
+    document.getElementById("formMessage").innerHTML =
+        result.message;
+
+    form.reset();
+
+});
 
 }
 function checkLocation() {
-
-    alert("Button clicked!");
 
     const location =
         document.getElementById("locationInput")
@@ -40,12 +41,13 @@ function checkLocation() {
         .toLowerCase();
 
     const serviceAreas = [
-        "east london",
-        "beacon bay",
-        "gonubie",
-        "nahoon",
-        "berea"
-    ];
+    "mthatha",
+    "east london",
+    "libode",
+    "ngqeleni",
+    "port st johns"
+];
+    
 
     const result =
         document.getElementById("locationResult");
@@ -62,4 +64,17 @@ function checkLocation() {
 
     }
 
+}
+function calculateQuote(){
+
+    const size =
+        Number(document.getElementById("lawnSize").value);
+
+    const pricePerSquareMeter = 2;
+
+    const total = size * pricePerSquareMeter;
+
+    document.getElementById("quoteResult")
+        .textContent =
+        `Estimated Price: R${total}`;
 }

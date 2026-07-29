@@ -10,15 +10,18 @@
 
     <nav>
 
-    <h1>J2S Lawns</h1>
+    <div class="brand">
+        <img src="images/logo.png" alt="J2S Lawns Logo" class="logo">
+        <h1>J2S Lawns</h1>
+    </div>
 
-<img src="images/logo.png" alt="J2S Lawns Logo" class="logo">
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
+
 </nav>
 
 <section class="hero">
@@ -29,7 +32,9 @@
         garden maintenance and property care.
     </p>
 
-    <button>Get Free Quote</button>
+    <a href="contact.html" class="service-btn">
+    Get Free Quote
+</a>
 </section>
 <section class="service-area">
 
@@ -45,6 +50,21 @@
     </button>
 
     <p id="locationResult"></p>
+
+</section>
+<section class="quote-section">
+
+    <h2>Get an Instant Estimate</h2>
+
+    <input type="number"
+           id="lawnSize"
+           placeholder="Lawn Size (m²)">
+
+    <button onclick="calculateQuote()">
+        Estimate Price
+    </button>
+
+    <p id="quoteResult"></p>
 
 </section>
 <section class="map-section">
@@ -84,18 +104,107 @@
     </div>
 </section>
 <section class="gallery">
-    <h2>Our Recent Work</h2>
+
+    <h2>Before & After Transformations</h2>
 
     <div class="gallery-container">
-        <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=600" alt="Lawn">
-        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600" alt="Garden">
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600" alt="Landscaping">
+
+        <div class="gallery-item">
+            <img src="images/before1.jpg" alt="Before Lawn">
+            <p>Before</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/after1.jpg" alt="After Lawn">
+            <p>After</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/before2.jpg" alt="Before Garden">
+            <p>Before</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/after2.jpg" alt="After Garden">
+            <p>After</p>
+        </div>
+
     </div>
+
 </section>
+<section class="testimonials">
+
+    <h2>What Our Clients Say</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+    <h3>★★★★★</h3>
+
+    <p>
+        "J2S Lawns transformed our outdoor space.
+        Highly recommended!"
+    </p>
+
+    <p><strong>- Satisfied Client</strong></p>
+</div>
+
+      <div class="card">
+    <h3>★★★★★</h3>
+
+    <p>
+        "Reliable, affordable and always delivers
+        quality work."
+    </p>
+
+    <p><strong>- Property Owner</strong></p>
+</div>
+
+      <div class="card">
+    <h3>★★★★★</h3>
+
+    <p>
+        "Professional and friendly service.
+        ALWAYS!"
+    </p>
+
+    <p><strong>- Homeowner</strong></p>
+
+</section>
+<a href="https://wa.me/27680156784?text=Hi%20J2S%20Lawns,%20I%20would%20like%20a%20quote."
+   target="_blank"
+   class="whatsapp-btn">
+   💬 Get a Quote on WhatsApp
+</a>
 <footer>
-    <p>&copy; 2026 J2S Lawns. All Rights Reserved.</p>
-    <p>Email: info@j2slawns.co.za</p>
-    <p>Phone: +27 XX XXX XXXX</p>
+
+    <div class="footer-content">
+
+        <div>
+            <h3>J2S Lawns</h3>
+            <p>Professional lawn care and landscaping services.</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About</a></p>
+            <p><a href="services.html">Services</a></p>
+            <p><a href="contact.html">Contact</a></p>
+        </div>
+
+        <div>
+            <h3>Contact Us</h3>
+            <p>Email: processinbus@gmail.com</p>
+            <p>Phone: +27 680 156784</p>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        &copy; 2026 J2S Lawns. All Rights Reserved.
+    </p>
+
 </footer>
 <script src="script.js"></script>
 </body>
