@@ -5,8 +5,11 @@ const form = document.getElementById("contactForm");
 if (form) {
 
     form.addEventListener("submit", async (e) => {
+        console.log("Submit button clicked!");
 
     e.preventDefault();
+
+    console.log("Submit button clicked!");
 
     const data = {
         name: document.getElementById("name").value,
@@ -15,20 +18,34 @@ if (form) {
         message: document.getElementById("message").value
     };
 
-    const response = await fetch("/contact", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+    console.log(data);
 
-    const result = await response.json();
+    try {
 
-    document.getElementById("formMessage").innerHTML =
-        result.message;
+        const response = await fetch("/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
-    form.reset();
+        console.log("Response status:", response.status);
+
+        const result = await response.json();
+
+        document.getElementById("formMessage").textContent = result.message;
+
+        form.reset();
+
+    } catch (err) {
+
+        console.error("Fetch error:", err);
+
+        document.getElementById("formMessage").textContent =
+            "Error sending enquiry.";
+
+    }
 
 });
 
