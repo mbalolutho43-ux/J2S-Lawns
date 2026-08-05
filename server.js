@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 app.use(express.json());
 app.use(express.static("public"));
 
-app.post("/contact", async (req, res) => {
+app.post("/contact", (req, res) => {
 
     const enquiry = req.body;
 
@@ -28,18 +28,22 @@ app.post("/contact", async (req, res) => {
 
     enquiries.push(enquiry);
 
-   console.log("Saving enquiry...");
+    console.log("Saving enquiry...");
 
     fs.writeFileSync(
         "enquiries.json",
         JSON.stringify(enquiries, null, 2)
     );
-    console.log("Enquiry saved!");
-    console.log("EMAIL FEATURE ACTIVE");
 
-try {
-    console.log("Attempting to send email...");
-    await transporter.sendMail({
+    console.log("Enquiry saved!");
+
+    // Respond to the website immediately
+    res.json({
+        message: "✅ Thank you! Your enquiry has been received. We will contact you soon."
+    });
+
+    // Send email in the background
+    transporter.sendMail({
         from: process.env.EMAIL_USER,
         to: process.env.EMAIL_USER,
         subject: "New J2S Lawns Enquiry",
@@ -51,15 +55,13 @@ Phone: ${enquiry.phone}
 Message:
 ${enquiry.message}
 `
+    })
+    .then(() => {
+        console.log("Email sent successfully!");
+    })
+    .catch((error) => {
+        console.error("Email sending failed:", error);
     });
-
-    console.log("Email sent successfully!");
-} catch (error) {
-    console.error("Email sending failed:", error);
-}
-
-res.json({ 
-    message: "Thank you for your enquiry! We will get back to you soon." });
 
 });
 
